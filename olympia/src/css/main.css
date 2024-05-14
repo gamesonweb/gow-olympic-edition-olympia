@@ -1,0 +1,55 @@
+
+#olympia{
+    z-index: 0;
+    &>canvas{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    &>.olympia-messages{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        height: 100%;
+        justify-content: start;
+        align-items: start;
+        margin-top: 0.5em;
+        >*{
+            font-size: 1.2em;
+            color: black;
+            padding: 0.2em;
+            padding-left: 1em;
+            padding-right: 6em;
+            --color: white;
+            border-left: 0.5em solid var(--color);
+            background: linear-gradient(90deg, white, rgba(255, 255, 255, 0));
+
+            &[slot=unlock]{
+                &::before{ content: "⭐"; }
+                --color:gold;
+                font-size: 2em;
+            }
+
+            &[slot=death]{
+                &::before{ content: "☠️"; }
+                --color: red;
+            }
+
+            &[slot=pv]{
+                &::before{ content: "🩷"; }
+                --color: pink;
+            }
+
+            &[slot=pause]{
+                &::before{ content: "⏸️"; }
+                font-size: 3em;
+            }
+
+            &[slot=hint]{
+                &::before{ content: "❓"; }
+                --color: blue;
+                font-size: 1.5em;
+            }
+        }
+    }
+}

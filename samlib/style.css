@@ -1,0 +1,503 @@
+
+sam-selector{
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    overflow-y: scroll;
+
+
+    background-color: gainsboro;
+    border-radius: 0.3em;
+    border: black 0.1rem solid;
+
+    text-align: center;
+}
+
+sam-option{
+    padding-left: 1em;
+    padding-right: 1em;
+    cursor: pointer;
+    
+    &:hover{
+        background-color: white;
+    }
+
+    &[selected=true]{
+        background-color:darkgray;
+        cursor: default;
+    }
+}
+
+sam-gamemenu{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1em;
+
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    >h2{
+        font-size: 5em;
+        padding: 0;
+        margin: 0.1em;
+    }
+
+    >.button_list{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        >*{
+            cursor: pointer;
+            transition: transform 0.2s;
+            &:hover{
+                transform: scale(1.2);
+            }
+        }
+
+        &:not(:last-child){
+            padding-bottom: 2em;
+        }
+    }
+    
+
+    a.menu_button{
+        display: block;
+        box-shadow: 0 0.1em 0.4em -0.1em black;
+        border: black 0.1em solid;
+        background-color: rgb(255,255,255,0.2);
+        padding: 0.5em;
+        margin: 0.5em;
+        font-size: 2em;
+        font-variant-caps: all-petite-caps;
+        font-weight: bold;
+    }
+
+    a.play{
+        display: block;
+
+        width: 20%;
+        aspect-ratio: 1;
+
+        border: 0.5em black solid;
+        border-radius: 50%;;
+
+        background-image: url(assets/play.svg);
+        background-color: rgb(255,255,255,0.2);
+        cursor: pointer;
+    }
+
+    a.shop{
+        display: block;
+
+        width: 20%;
+        aspect-ratio: 1;
+
+        background-image: url(assets/shop.svg);
+        cursor: pointer;
+    }
+}
+
+sam-gameheader{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    height: fit-content;
+    border-bottom: 0.3em black solid;
+    box-shadow: 0 1em 1em -1em black;
+
+    .back, .home{
+        background-size: contain;
+        background-origin: content-box;
+        background-repeat: no-repeat;
+        background-color: rgb(255,255,255,0.2);
+
+        height: 3em;
+        width: 3em;
+        padding: 0.2em;
+        margin: 0.3em;
+        
+        border: black 0.3em solid;
+
+        &:not(.disabled){
+            cursor: pointer;
+            transition: transform 0.2s;
+            &:hover{
+                transform: scale(1.2);
+            
+            }
+        }
+
+        &.disabled{
+            opacity: 0.3;
+        }
+    }
+
+    .back{
+        background-image: url(assets/back.svg);
+    }
+
+    .home{
+        background-image: url(assets/home.svg);
+    }
+}
+
+sam-shop{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.1em;
+
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    >h2{
+        font-size: 2em;
+        padding: 0;
+        margin: 0em;
+        padding-bottom: 0.4em;
+        width: 100%;
+        text-align: center;
+        border-bottom: solid 0.15em black;
+    }
+
+    >.price{
+        position: absolute;
+        top: 0;
+        align-self: flex-end;
+        margin: 0.2em;
+        padding: 0.3em;
+        font-size: 1.5em;
+        background-color: rgb(255,255,255,0.2);
+        &::after{
+            content: "€";
+        }
+    }
+
+    >.item_list{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        overflow-y: scroll;
+
+        >a{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 0.2em;
+            padding: 0.5em;
+            width: 13em;
+
+            border: 0.3em black solid;
+            background-color: rgb(255,255,255,0.2);
+            >h3{
+                text-align: center;
+                margin: 0;
+            }
+            >.illustration{
+                display: block;
+                margin: auto;
+                width: 80%;
+                aspect-ratio: 1;
+                box-shadow: inset 0 0 1em 0 black;
+            }
+            >.price{
+                position: relative;
+                display: block;
+                text-align: end;
+                font-size: 1.5em;
+                font-weight: bold;
+                &::after{
+                    content: "€";
+                }
+            }
+            &.buyed{
+                position: relative;
+                color: rgb(0,0,0,0.4);
+                border-color: rgb(0,0,0,0.4);
+                background-color: rgb(255,255,255,0.1);
+                &::after{
+                    position: absolute;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    height: 100%;
+
+                    content: "Buyed";
+                    color: red;
+                    font-size: 6em;
+                    font-weight: bold;
+                    font-variant-caps: all-petite-caps;
+                    transform: rotate(45deg);
+                }
+            }
+            &:not(.buyed){
+                transition: transform 0.2s;
+                cursor: pointer;
+                &:hover{
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+
+    >.button_list{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+        justify-content: space-around;
+        >*{
+            cursor: pointer;
+            transition: transform 0.2s;
+            &:hover{
+                transform: scale(1.2);
+            }
+        }
+
+        &:not(:last-child){
+            padding-bottom: 2em;
+        }
+    }
+    
+
+    a.button{
+        display: block;
+        box-shadow: 0 0.1em 0.4em -0.1em black;
+
+        border: black 0.1em solid;
+        background-color: rgb(255,255,255,0.2);
+
+        padding: 0.5em;
+        margin: 0.5em;
+        font-size: 2em;
+        font-variant-caps: all-petite-caps;
+        font-weight: bold;
+    }
+
+    a.play{
+        display: block;
+
+        width: 20%;
+        aspect-ratio: 1;
+
+        border: 0.5em black solid;
+        border-radius: 50%;;
+
+        background-image: url(assets/play.svg);
+        background-color: rgb(255,255,255,0.2);
+        cursor: pointer;
+    }
+
+    a.shop{
+        display: block;
+
+        width: 20%;
+        aspect-ratio: 1;
+
+        background-image: url(assets/shop.svg);
+        cursor: pointer;
+    }
+}
+
+sam-numberinput{
+    --var-outline: black 0.2em solid;
+    &:focus-within{
+        --var-outline: rgb(96, 96, 244) 0.2em solid;
+    }
+    
+    display: flex;
+    flex-direction: row;
+    >input[type=text]{
+        font-size: 1em;
+        text-align: center;
+        width: 2em;
+        border-top: var(--var-outline);
+        border-bottom: var(--var-outline);
+        &:focus{
+            outline: none;
+        }
+    }
+    >input[type=button]{
+        display: flex;
+        font-size: 1.2em;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        width: 1.4em;
+        padding-bottom: 0.em;
+        font-weight: bold;
+        outline: none;
+        border: var(--var-outline);
+        &:first-child{
+            border-top-left-radius: 40%;
+            border-bottom-left-radius: 40%;
+            border-right: none;
+        }
+        &:last-child{
+            border-top-right-radius: 40%;
+            border-bottom-right-radius: 40%;
+            border-left: none;
+        }
+    }
+}
+
+sam-endscreen{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    padding: 1em;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8em;
+
+    >h2{
+        font-variant-caps: all-petite-caps;
+        font-size: 5em;
+        padding: 0;
+        margin: 0.1em;
+        text-shadow: 0.05em 0.05em 0 white, -0.05em -0.05em 0 white, 0.05em -0.05em 0 white, -0.05em 0.05em 0 white;
+    }
+
+    >._winner{
+        text-shadow: 0 0 0.4em white, 0 0 0.6em white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 4em;
+        font-weight: bold;
+        &::before{
+            font-size: 0.5em;
+            content: "Winner";
+            font-weight: normal;
+        }
+    }
+    
+    >*{
+        margin: 0.5em;
+    }
+
+    >._score{
+        font-size: 2em;
+        font-weight: bold;
+        &::before{
+            content: "Score: ";
+            font-weight: normal;
+        }
+    }
+
+    >._money{
+        background-color: rgb(255,255,255,0.4);
+        border: black 0.1em solid;
+        padding: 0.1em;
+        font-size: 2em;
+        font-weight: bold;
+        &::before{
+            content: "+";
+            font-weight: normal;
+        }
+        &::after{
+            content: "🪙";
+            font-weight: normal;
+        }
+    }
+
+    >._buttons{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        >*{
+            font-size: 1.5em;
+            background-color: rgb(255,255,255,0.4);
+            padding: 0.3em;
+            margin: 0.5em;
+            
+            width: 6em;
+            text-align: center;
+            border: black 0.1em solid;
+            cursor: pointer;
+            transition: transform 0.2s;
+            &:hover{
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+sam-onglets{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+
+    >nav{ /* Onglets buttons */
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        >*{ /* A Button */
+            background-color: rgba(255,255,255,0.5);
+            border: black 0.2em solid;
+            border-bottom: none;
+            border-top-left-radius: 0.5em;
+            border-top-right-radius: 0.5em;
+
+            margin: 0.1em;
+            min-width: 1.5em;
+            text-align: center;
+            margin-top: 0.4em;
+            padding: 0.2em;
+            padding-bottom: 0.6em;
+            cursor: pointer;
+            transition: margin 0.1s, padding 0.1s, background-color 0.3s;
+            &:hover{
+                padding-bottom: 0.9em;
+                margin-top: 0.1em;
+                background-color: rgba(255,255,255,0.8);
+            }
+            &[selected]{
+                padding-bottom: 0.2em;
+                margin-top: 0.8em;
+                background-color: rgba(255,255,255,1);
+                cursor: none;
+            }
+        }
+    }
+    >div{
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        >*{
+            &:not([selected]){  display:none !important; };
+        }
+    }
+}
