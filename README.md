@@ -1,6 +1,3 @@
-# gow-olympic-edition-olympia
-gow-olympic-edition-olympia created by GitHub Classroom
-
 # Olympia: Adventure of Frigosaure
 Dans ce jeu, vous parcourerais de multiples niveau pour affronter des créature mythologiques championnes olympiques en contrôlant le frigosaure, un loitain ancêtre des friges aux capacités extraordinaires.
 
