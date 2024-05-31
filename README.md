@@ -16,6 +16,9 @@ https://youtu.be/uvXdeVsxTOU?si=agLFnKkI7goBMknK
 Un playthrough du niveau de la ville, jusqu'au boss mais sans le battre:
 https://youtu.be/r8ITKL-fUPQ
 
+Un playthrough du niveau du feu, jusqu'au boss mais sans le battre car il est trop difficile:
+https://youtu.be/yJLqxQZLA7k
+
 # Editeur
 En appuyant sur 7, dans l'accueil vous pouvez accéder à l'éditeur. Il est fait pour développer le jeu et n'est pas vraiment compréhensible par n'importe qui.
 
