@@ -13,7 +13,7 @@ Un trailer de présentation du jeu, avec quelques extraits :
 https://youtu.be/uvXdeVsxTOU?si=agLFnKkI7goBMknK
 
 Un playthrough du niveau de la ville, jusqu'au boss mais sans le battre :
-https://youtu.be/r8ITKL-fUPQ
+https://youtu.be/uSQGrJFi8WY
 
 Un playthrough du niveau du feu, jusqu'au boss mais sans le battre car il est trop difficile :
 https://youtu.be/yJLqxQZLA7k
