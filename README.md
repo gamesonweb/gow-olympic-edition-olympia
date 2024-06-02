@@ -18,6 +18,9 @@ https://youtu.be/uSQGrJFi8WY
 Un playthrough du niveau du feu, jusqu'au boss mais sans le battre car il est trop difficile :
 https://youtu.be/yJLqxQZLA7k
 
+Un playthrough du niveau de l'eau:
+https://youtu.be/XCHGmTTNCzY
+
 # Éditeur
 En appuyant sur 7, dans l'accueil, vous pouvez accéder à l'éditeur. Il est fait pour développer le jeu et n'est pas vraiment compréhensible par n'importe qui.
 
